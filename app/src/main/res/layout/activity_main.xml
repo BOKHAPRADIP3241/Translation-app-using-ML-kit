@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C2526"
+    android:padding="16dp"
+    android:layout_marginTop="50dp"
+    android:layout_gravity="center"
+    tools:context=".MainActivity">
+
+    <!-- Source Language Dropdown -->
+    <Spinner
+        android:id="@+id/sourceLanguageSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/spinner_background"
+        android:entries="@array/languages"
+        android:padding="8dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Swap Button -->
+    <ImageButton
+        android:id="@+id/swapButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="?android:selectableItemBackground"
+        android:src="@android:drawable/ic_menu_rotate"
+        app:layout_constraintStart_toEndOf="@id/sourceLanguageSpinner"
+        app:layout_constraintTop_toTopOf="@id/sourceLanguageSpinner"
+        app:layout_constraintBottom_toBottomOf="@id/sourceLanguageSpinner"
+        android:layout_marginStart="8dp" />
+
+    <!-- Target Language Dropdown -->
+    <Spinner
+        android:id="@+id/targetLanguageSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/spinner_background"
+        android:entries="@array/languages"
+        android:padding="8dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@id/swapButton"
+        app:layout_constraintTop_toTopOf="@id/sourceLanguageSpinner"
+        android:layout_marginStart="8dp" />
+
+    <!-- Input Text Area -->
+    <EditText
+        android:id="@+id/inputText"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edittext_background"
+        android:gravity="top|start"
+        android:hint="Enter text"
+        android:padding="12dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#AAAAAA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sourceLanguageSpinner" />
+
+    <!-- Microphone Icon -->
+    <ImageButton
+        android:id="@+id/micButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="?android:selectableItemBackground"
+        android:src="@android:drawable/ic_btn_speak_now"
+        app:layout_constraintBottom_toBottomOf="@id/inputText"
+        app:layout_constraintStart_toStartOf="@id/inputText"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Translation Output Area -->
+    <TextView
+        android:id="@+id/translatedText"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edittext_background"
+        android:gravity="top|start"
+        android:padding="12dp"
+        android:text="Translation"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#AAAAAA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
